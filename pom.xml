@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.github.jlf1997</groupId>
+  <artifactId>api-doc-markup</artifactId>
+  <version>0.0.1</version>
+  <packaging>jar</packaging>
+
+  <name>api-doc-markup</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  
+	<build>
+		<pluginManagement>
+			<plugins>
+				 <plugin>
+				    <groupId>org.asciidoctor</groupId>
+				    <artifactId>asciidoctor-maven-plugin</artifactId>
+				    <version>1.5.6</version>
+				    <configuration>
+				   	    <sourceDirectory>docs/asciidoc/generated</sourceDirectory>
+				   	    <outputDirectory>docs/asciidoc/html</outputDirectory>
+				   	    <backend>html</backend>
+				   	    <sourceHighlighter>coderay</sourceHighlighter>
+				   	     <attributes>
+	                        <!--菜单栏在左边-->
+	                        <toc>left</toc>
+	                        <!--多标题排列-->
+	                        <toclevels>3</toclevels>
+	                        <!--自动打数字序号-->
+	                        <sectnums>true</sectnums>
+                    </attributes>
+				  	</configuration>
+				</plugin>
+				
+				
+			</plugins>
+		</pluginManagement>
+	</build>
+	
+	<repositories>
+	    <repository>
+	        <snapshots>
+	            <enabled>false</enabled>
+	        </snapshots>
+	        <id>jcenter-releases</id>
+	        <name>jcenter</name>
+	        <url>http://jcenter.bintray.com</url>
+	    </repository>
+	</repositories>
+	
+	
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+	    <groupId>io.github.swagger2markup</groupId>
+	    <artifactId>swagger2markup</artifactId>
+	    <version>1.3.2</version>
+	</dependency>
+  </dependencies>
+</project>
