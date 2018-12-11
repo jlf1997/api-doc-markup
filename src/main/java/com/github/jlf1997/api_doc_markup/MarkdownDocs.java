@@ -3,6 +3,8 @@ package com.github.jlf1997.api_doc_markup;
 import java.net.URL;
 import java.nio.file.Paths;
 
+import com.github.jlf1997.configs.SwaggerDocConfigs;
+
 import io.github.swagger2markup.GroupBy;
 import io.github.swagger2markup.Language;
 import io.github.swagger2markup.Swagger2MarkupConfig;
@@ -19,7 +21,7 @@ import io.github.swagger2markup.markup.builder.MarkupLanguage;
 public class MarkdownDocs {
 	
 	
-	private static final String url = "http://localhost:8080/v2/api-docs";
+	private static final String url = SwaggerDocConfigs.SWAGGER_URL+"/v2/api-docs";
 	 /**
      * 生成AsciiDocs格式文档
      * @throws Exception
